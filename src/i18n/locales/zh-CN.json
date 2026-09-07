@@ -297,6 +297,7 @@
     "filter_xai": "xAI",
     "filter_iflow": "iFlow",
     "filter_vertex": "Vertex",
+    "filter_dimagent": "DimAgent",
     "filter_empty": "空文件",
     "filter_unknown": "其他",
     "type_virtual": "虚拟认证文件",
@@ -500,6 +501,17 @@
       "empty_data": "暂无额度数据",
       "refresh_button": "刷新额度",
       "fetch_all": "获取全部"
+  },
+  "dimagent_quota": {
+    "empty_title": "暂无 DimAgent 认证",
+    "empty_desc": "使用 DimAgent OAuth 登录后即可查看账号额度。",
+    "idle": "点击此处加载额度",
+    "loading": "正在加载额度...",
+    "load_failed": "额度获取失败：{{message}}",
+    "missing_auth_index": "认证文件缺少 auth_index",
+    "empty_data": "暂无额度数据",
+    "reset": "{{date}} 重置",
+    "feature_web_search": "网页搜索"
   },
   "xai_quota": {
     "title": "Grok 额度",

@@ -326,6 +326,61 @@ export interface CodeBuddyCnQuotaState {
   errorStatus?: number;
 }
 
+// DimAgent usage payload (the inner `data` object of GET /api/me/usage).
+// The account is billed in "credits" for the subscription term, plus
+// per-feature meters (e.g. web_search calls).
+export interface DimagentCreditBucket {
+  expires_at?: string;
+  hard_deadline_at?: string;
+}
+
+export interface DimagentCredits {
+  total_credits?: number;
+  used_credits?: number;
+  total_units?: number;
+  used_units?: number;
+  subscription_bucket?: DimagentCreditBucket | null;
+}
+
+export interface DimagentFeatureMeter {
+  feature_key?: string;
+  unlimited?: boolean;
+  total_allowance?: number;
+  total_used?: number;
+  period_end?: string;
+}
+
+export interface DimagentUsageData {
+  credits?: DimagentCredits | null;
+  feature_meters?: DimagentFeatureMeter[] | null;
+  subscription?: { product?: { name?: string } | null } | null;
+  credits_display?: { credit_name?: string } | null;
+}
+
+// Result of reducing a DimAgentUsageData into renderable quota rows.
+export interface DimagentQuotaData {
+  rows: DimagentQuotaRow[];
+  planName: string | null;
+}
+
+export interface DimagentQuotaRow {
+  id: string;
+  label: string;
+  used: number;
+  limit: number;
+  /** Reset instant in epoch ms (term end); null when not reported. */
+  resetAtMs?: number | null;
+}
+
+export interface DimagentQuotaState {
+  status: 'idle' | 'loading' | 'success' | 'error';
+  rows: DimagentQuotaRow[];
+  /** Subscription plan name (e.g. "Lite套餐"), from the usage payload. */
+  planName?: string | null;
+  error?: string;
+  errorStatus?: number;
+}
+
 // xAI/Grok API payload types
 export interface XaiBillingCent {
   val?: number | string;

@@ -16,9 +16,13 @@ import type {
   XaiBillingPeriodType,
   XaiBillingSummary,
   XaiProductUsageSummary,
+  DimagentUsageData,
+  DimagentQuotaData,
+  DimagentQuotaRow,
 } from '@/types';
 import { normalizeNumberValue, normalizeQuotaFraction, normalizeStringValue } from './parsers';
 import { parseOffsetSecondsToMs, resolveResetMs } from './resetInstants';
+import { parseTimestampMs } from '@/utils/timestamp';
 
 const ANTIGRAVITY_BUCKET_WINDOW_ORDER = new Map<string, number>([
   ['5h', 0],
@@ -569,4 +573,62 @@ export function mergeXaiBillingSummaries(
     billingPeriodEnd: primary.billingPeriodEnd ?? fallback.billingPeriodEnd,
     usedPercent: primary.usedPercent ?? fallback.usedPercent,
   };
+}
+
+const toEpochMs = (value: string | undefined | null): number | null => {
+  if (!value) return null;
+  const ms = parseTimestampMs(value);
+  return Number.isFinite(ms) ? ms : null;
+};
+
+/**
+ * Reduce a DimAgent usage payload into quota rows: one main "credits" row for
+ * the subscription term, plus one row per finite feature meter (e.g. web_search).
+ * Also surfaces the subscription plan name.
+ */
+export function buildDimagentQuotaData(data: DimagentUsageData): DimagentQuotaData {
+  const rows: DimagentQuotaRow[] = [];
+  const credits = data.credits ?? null;
+  const planName =
+    typeof data.subscription?.product?.name === 'string' && data.subscription.product.name.trim()
+      ? data.subscription.product.name.trim()
+      : null;
+
+  if (credits) {
+    const limit =
+      normalizeNumberValue(credits.total_credits) ?? normalizeNumberValue(credits.total_units) ?? 0;
+    const used =
+      normalizeNumberValue(credits.used_credits) ?? normalizeNumberValue(credits.used_units) ?? 0;
+    const bucket = credits.subscription_bucket ?? null;
+    const creditName =
+      typeof data.credits_display?.credit_name === 'string' && data.credits_display.credit_name.trim()
+        ? data.credits_display.credit_name.trim()
+        : 'Credits';
+    rows.push({
+      id: 'credits',
+      label: creditName,
+      used,
+      limit,
+      resetAtMs: toEpochMs(bucket?.expires_at ?? bucket?.hard_deadline_at),
+    });
+  }
+
+  (data.feature_meters ?? []).forEach((meter, index) => {
+    const key =
+      typeof meter.feature_key === 'string' && meter.feature_key.trim()
+        ? meter.feature_key.trim()
+        : `feature-${index}`;
+    const limit = normalizeNumberValue(meter.total_allowance);
+    if (limit === null || limit <= 0) return;
+    const used = normalizeNumberValue(meter.total_used) ?? 0;
+    rows.push({
+      id: key,
+      label: key,
+      used,
+      limit,
+      resetAtMs: toEpochMs(meter.period_end),
+    });
+  });
+
+  return { rows, planName };
 }

@@ -173,3 +173,15 @@ export const XAI_API_REQUEST_HEADERS = {
   Authorization: 'Bearer $TOKEN$',
   accept: 'application/json',
 };
+
+// DimAgent usage API. The account is billed in "credits" for the subscription
+// term, plus per-feature meters (e.g. web_search calls). The required identity
+// headers mirror the desktop client.
+export const DIMAGENT_USAGE_URL = 'https://dimagent.cn/api/me/usage';
+
+export const DIMAGENT_REQUEST_HEADERS = {
+  Authorization: 'Bearer $TOKEN$',
+  'User-Agent': 'DimAgent-Desktop',
+  'X-Title': 'DimAgent',
+  'HTTP-Referer': 'https://dimagent.com/',
+};

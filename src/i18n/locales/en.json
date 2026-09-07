@@ -297,6 +297,7 @@
     "filter_xai": "xAI",
     "filter_iflow": "iFlow",
     "filter_vertex": "Vertex",
+    "filter_dimagent": "DimAgent",
     "filter_empty": "Empty",
     "filter_unknown": "Other",
     "type_virtual": "Virtual auth file",
@@ -500,6 +501,17 @@
       "empty_data": "No quota data",
       "refresh_button": "Refresh quota",
       "fetch_all": "Fetch all"
+  },
+  "dimagent_quota": {
+    "empty_title": "No DimAgent credentials",
+    "empty_desc": "Log in with DimAgent OAuth to view account usage.",
+    "idle": "Click to load usage",
+    "loading": "Loading usage...",
+    "load_failed": "Failed to load usage: {{message}}",
+    "missing_auth_index": "Auth file is missing auth_index",
+    "empty_data": "No usage data",
+    "reset": "Resets {{date}}",
+    "feature_web_search": "Web Search"
   },
   "xai_quota": {
     "title": "Grok Quota",

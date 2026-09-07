@@ -297,6 +297,7 @@
     "filter_xai": "xAI",
     "filter_iflow": "iFlow",
     "filter_vertex": "Vertex",
+    "filter_dimagent": "DimAgent",
     "filter_empty": "空檔案",
     "filter_unknown": "其他",
     "type_virtual": "虛擬驗證檔案",
@@ -500,6 +501,17 @@
       "empty_data": "暫無額度資料",
       "refresh_button": "刷新額度",
       "fetch_all": "取得全部"
+  },
+  "dimagent_quota": {
+    "empty_title": "暫無 DimAgent 認證",
+    "empty_desc": "使用 DimAgent OAuth 登入後即可查看帳號額度。",
+    "idle": "點擊此處載入額度",
+    "loading": "正在載入額度...",
+    "load_failed": "額度取得失敗：{{message}}",
+    "missing_auth_index": "認證檔案缺少 auth_index",
+    "empty_data": "暫無額度資料",
+    "reset": "{{date}} 重設",
+    "feature_web_search": "網頁搜尋"
   },
   "xai_quota": {
     "title": "Grok 配額",

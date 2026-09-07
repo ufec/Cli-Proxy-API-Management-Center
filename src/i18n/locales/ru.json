@@ -296,6 +296,7 @@
     "filter_xai": "xAI",
     "filter_iflow": "iFlow",
     "filter_vertex": "Vertex",
+    "filter_dimagent": "DimAgent",
     "filter_empty": "Пусто",
     "filter_unknown": "Другое",
     "type_virtual": "Виртуальный файл авторизации",
@@ -487,6 +488,17 @@
       "empty_data": "Нет данных о квоте",
       "refresh_button": "Обновить квоту",
       "fetch_all": "Получить все"
+  },
+  "dimagent_quota": {
+    "empty_title": "Нет учётных данных DimAgent",
+    "empty_desc": "Войдите через DimAgent OAuth, чтобы видеть использование аккаунта.",
+    "idle": "Нажмите, чтобы загрузить использование",
+    "loading": "Загрузка использования...",
+    "load_failed": "Не удалось загрузить использование: {{message}}",
+    "missing_auth_index": "В файле авторизации отсутствует auth_index",
+    "empty_data": "Нет данных об использовании",
+    "reset": "Сброс: {{date}}",
+    "feature_web_search": "Веб-поиск"
   },
   "xai_quota": {
     "title": "Квота Grok",

@@ -5,6 +5,7 @@
 import type {
   ClaudeUsagePayload,
   CodexUsagePayload,
+  DimagentUsageData,
   KimiUsagePayload,
   XaiBillingPayload,
 } from '@/types';
@@ -199,6 +200,34 @@ export function parseXaiBillingPayload(payload: unknown): XaiBillingPayload | nu
   }
   if (typeof payload === 'object') {
     return payload as XaiBillingPayload;
+  }
+  return null;
+}
+
+// DimAgent usage wraps its content in `{ success, data: { credits, feature_meters, ... } }`.
+// Extract the inner `data` object (or the payload itself when it already carries the
+// data fields directly).
+export function parseDimagentUsagePayload(payload: unknown): DimagentUsageData | null {
+  if (payload === undefined || payload === null) return null;
+  let record: unknown = payload;
+  if (typeof payload === 'string') {
+    const trimmed = payload.trim();
+    if (!trimmed) return null;
+    try {
+      record = JSON.parse(trimmed);
+    } catch {
+      return null;
+    }
+  }
+  if (typeof record !== 'object' || record === null) return null;
+  const obj = record as Record<string, unknown>;
+  if (obj.success === false) return null;
+  const inner = obj.data;
+  if (typeof inner === 'object' && inner !== null) {
+    return inner as DimagentUsageData;
+  }
+  if (obj.credits !== undefined || obj.feature_meters !== undefined) {
+    return obj as DimagentUsageData;
   }
   return null;
 }
