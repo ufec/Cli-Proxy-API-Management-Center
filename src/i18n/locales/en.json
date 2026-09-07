@@ -298,6 +298,7 @@
     "filter_iflow": "iFlow",
     "filter_vertex": "Vertex",
     "filter_dimagent": "DimAgent",
+    "filter_codebuddy-cn": "CodeBuddy CN",
     "filter_empty": "Empty",
     "filter_unknown": "Other",
     "type_virtual": "Virtual auth file",
@@ -490,17 +491,17 @@
     "limit_index": "Limit #{{index}}",
     "reset_hint": "resets in {{hint}}"
   },
-    "codebuddy_cn_quota": {
-      "title": "CodeBuddy CN Quota",
-      "empty_title": "No CodeBuddy CN credentials",
-      "empty_desc": "Upload a CodeBuddy CN auth file to view quota.",
-      "idle": "Click to refresh quota",
-      "loading": "Loading quota...",
-      "load_failed": "Failed to load quota: {{message}}",
-      "missing_auth_index": "Auth file is missing auth_index",
-      "empty_data": "No quota data",
-      "refresh_button": "Refresh quota",
-      "fetch_all": "Fetch all"
+  "codebuddy_cn_quota": {
+    "title": "CodeBuddy CN Quota",
+    "empty_title": "No CodeBuddy CN credentials",
+    "empty_desc": "Upload a CodeBuddy CN auth file to view quota.",
+    "idle": "Click to refresh quota",
+    "loading": "Loading quota...",
+    "load_failed": "Failed to load quota: {{message}}",
+    "missing_auth_index": "Auth file is missing auth_index",
+    "empty_data": "No quota data",
+    "refresh_button": "Refresh quota",
+    "fetch_all": "Fetch all"
   },
   "dimagent_quota": {
     "empty_title": "No DimAgent credentials",
@@ -1219,7 +1220,7 @@
     "meta_loaded": "{{count}} loaded",
     "meta_attention": "{{count}} need attention",
     "empty_title": "No quota-capable credentials",
-    "empty_desc": "Connect an Antigravity, Claude, Codex, xAI, Kimi, or CodeBuddy CN credential to track its quota here.",
+    "empty_desc": "Connect an Antigravity, Claude, Codex, xAI, Kimi, CodeBuddy CN, or DimAgent credential to track its quota here.",
     "windows_title": "Quota windows",
     "windows_span_weekly": "two weeks",
     "windows_span_session": "three days",

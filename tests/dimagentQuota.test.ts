@@ -4,11 +4,12 @@ import {
   buildDimagentQuotaData,
 } from '@/utils/quota';
 
-// Real payload shape captured from GET /api/me/usage (dimagent_usage.har).
+// Payload shape captured from GET /api/me/usage, with placeholder business
+// values (account id, quota numbers, and dates are all fake).
 const HAR_BODY = {
   success: true,
   data: {
-    account_id: 1953,
+    account_id: 1,
     subscription: {
       product: { name: 'Lite套餐' },
     },

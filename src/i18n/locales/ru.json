@@ -297,6 +297,7 @@
     "filter_iflow": "iFlow",
     "filter_vertex": "Vertex",
     "filter_dimagent": "DimAgent",
+    "filter_codebuddy-cn": "CodeBuddy CN",
     "filter_empty": "Пусто",
     "filter_unknown": "Другое",
     "type_virtual": "Виртуальный файл авторизации",
@@ -477,17 +478,17 @@
     "limit_index": "Лимит #{{index}}",
     "reset_hint": "сброс через {{hint}}"
   },
-    "codebuddy_cn_quota": {
-      "title": "Квота CodeBuddy CN",
-      "empty_title": "Нет учётных данных CodeBuddy CN",
-      "empty_desc": "Загрузите файл авторизации CodeBuddy CN для просмотра квоты.",
-      "idle": "Нажмите, чтобы обновить квоту",
-      "loading": "Загрузка квоты...",
-      "load_failed": "Не удалось получить квоту: {{message}}",
-      "missing_auth_index": "В файле авторизации отсутствует auth_index",
-      "empty_data": "Нет данных о квоте",
-      "refresh_button": "Обновить квоту",
-      "fetch_all": "Получить все"
+  "codebuddy_cn_quota": {
+    "title": "Квота CodeBuddy CN",
+    "empty_title": "Нет учётных данных CodeBuddy CN",
+    "empty_desc": "Загрузите файл авторизации CodeBuddy CN для просмотра квоты.",
+    "idle": "Нажмите, чтобы обновить квоту",
+    "loading": "Загрузка квоты...",
+    "load_failed": "Не удалось получить квоту: {{message}}",
+    "missing_auth_index": "В файле авторизации отсутствует auth_index",
+    "empty_data": "Нет данных о квоте",
+    "refresh_button": "Обновить квоту",
+    "fetch_all": "Получить все"
   },
   "dimagent_quota": {
     "empty_title": "Нет учётных данных DimAgent",
@@ -1206,7 +1207,7 @@
     "meta_loaded": "{{count}} загружено",
     "meta_attention": "{{count}} требуют внимания",
     "empty_title": "Нет учётных данных с квотами",
-    "empty_desc": "Подключите учётные данные Antigravity, Claude, Codex, xAI, Kimi или CodeBuddy CN, чтобы отслеживать квоту здесь.",
+    "empty_desc": "Подключите учётные данные Antigravity, Claude, Codex, xAI, Kimi, CodeBuddy CN или DimAgent, чтобы отслеживать квоту здесь.",
     "windows_title": "Окна квот",
     "windows_span_weekly": "две недели",
     "windows_span_session": "три дня",

@@ -298,6 +298,7 @@
     "filter_iflow": "iFlow",
     "filter_vertex": "Vertex",
     "filter_dimagent": "DimAgent",
+    "filter_codebuddy-cn": "CodeBuddy CN",
     "filter_empty": "空檔案",
     "filter_unknown": "其他",
     "type_virtual": "虛擬驗證檔案",
@@ -490,17 +491,17 @@
     "limit_index": "限額 #{{index}}",
     "reset_hint": "{{hint}} 後重置"
   },
-    "codebuddy_cn_quota": {
-      "title": "CodeBuddy CN 額度",
-      "empty_title": "暫無 CodeBuddy CN 認證",
-      "empty_desc": "上傳 CodeBuddy CN 認證檔案後即可查看額度。",
-      "idle": "點擊此處刷新額度",
-      "loading": "正在載入額度...",
-      "load_failed": "額度取得失敗：{{message}}",
-      "missing_auth_index": "認證檔案缺少 auth_index",
-      "empty_data": "暫無額度資料",
-      "refresh_button": "刷新額度",
-      "fetch_all": "取得全部"
+  "codebuddy_cn_quota": {
+    "title": "CodeBuddy CN 額度",
+    "empty_title": "暫無 CodeBuddy CN 認證",
+    "empty_desc": "上傳 CodeBuddy CN 認證檔案後即可查看額度。",
+    "idle": "點擊此處刷新額度",
+    "loading": "正在載入額度...",
+    "load_failed": "額度取得失敗：{{message}}",
+    "missing_auth_index": "認證檔案缺少 auth_index",
+    "empty_data": "暫無額度資料",
+    "refresh_button": "刷新額度",
+    "fetch_all": "取得全部"
   },
   "dimagent_quota": {
     "empty_title": "暫無 DimAgent 認證",
@@ -1245,7 +1246,7 @@
     "meta_loaded": "{{count}} 個已載入",
     "meta_attention": "{{count}} 個需關注",
     "empty_title": "暫無可查配額的憑證",
-    "empty_desc": "接入 Antigravity、Claude、Codex、xAI、Kimi 或 CodeBuddy CN 憑證後即可在此查看配額。",
+    "empty_desc": "接入 Antigravity、Claude、Codex、xAI、Kimi、CodeBuddy CN 或 DimAgent 憑證後即可在此查看配額。",
     "windows_title": "配額視窗",
     "windows_span_weekly": "兩週",
     "windows_span_session": "三天",
