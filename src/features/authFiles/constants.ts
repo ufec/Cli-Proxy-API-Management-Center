@@ -1,6 +1,7 @@
 import type { TFunction } from 'i18next';
 import iconAntigravity from '@/assets/icons/antigravity.svg';
 import iconClaude from '@/assets/icons/claude.svg';
+import iconCodeBuddy from '@/assets/icons/codebuddy.svg';
 import iconCodex from '@/assets/icons/codex.svg';
 import iconDimagent from '@/assets/icons/dimagent.png';
 import iconGemini from '@/assets/icons/gemini.svg';
@@ -59,6 +60,7 @@ export const AUTH_FILE_USING_API_PROVIDERS = new Set(['xai']);
 export const AUTH_FILE_MANUAL_REFRESH_PROVIDERS = new Set([
   'antigravity',
   'claude',
+  'codebuddy-cn',
   'codex',
   'kimi',
   'xai',
@@ -72,6 +74,7 @@ export const AUTH_FILE_ICONS: Record<string, AuthFileIconAsset> = {
   antigravity: iconAntigravity,
   aistudio: iconGemini,
   claude: iconClaude,
+  'codebuddy-cn': iconCodeBuddy,
   codex: iconCodex,
   dimagent: iconDimagent,
   gemini: iconGemini,

@@ -404,10 +404,13 @@ export const serializeOauthModelAliases = (
   });
 
 const OAUTH_MODEL_ALIAS_ENDPOINT = '/oauth-model-alias';
-const MANUAL_REFRESH_EXPIRY_OFFSET_MS = 60_000;
 
-export const buildManualRefreshExpiredAt = (nowMs = Date.now()): string =>
-  new Date(nowMs - MANUAL_REFRESH_EXPIRY_OFFSET_MS).toISOString();
+type AuthFileRefreshResponse = {
+  status?: string;
+  name?: string;
+  expired?: string;
+  last_refresh?: string;
+};
 
 export const authFilesApi = {
   list: async () =>
@@ -420,10 +423,7 @@ export const authFilesApi = {
     apiClient.patch('/auth-files/fields', { name, ...fields }),
 
   requestManualRefresh: (name: string) =>
-    apiClient.patch('/auth-files/fields', {
-      name,
-      expired: buildManualRefreshExpiredAt(),
-    }),
+    apiClient.post<AuthFileRefreshResponse>('/auth-files/refresh', { name }),
 
   uploadFiles: async (files: File[]): Promise<AuthFileBatchUploadResult> => {
     const requestedNames = files.map((file) => file.name);
