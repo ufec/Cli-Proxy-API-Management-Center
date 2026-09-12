@@ -90,6 +90,12 @@ const PROVIDERS: BuiltInOAuthProviderCard[] = [
   },
   {
     kind: 'builtin',
+    id: 'codebuddy-intl',
+    titleKey: 'auth_login.codebuddy_intl_oauth_title',
+    icon: iconCodeBuddy,
+  },
+  {
+    kind: 'builtin',
     id: 'codex',
     titleKey: 'auth_login.codex_oauth_title',
     icon: iconCodex,

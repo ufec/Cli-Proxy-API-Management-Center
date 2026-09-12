@@ -14,6 +14,7 @@ import type {
   KimiQuotaState,
   XaiQuotaState,
   CodeBuddyCnQuotaState,
+  CodeBuddyIntlQuotaState,
   DimagentQuotaState,
 } from '@/types';
 
@@ -26,6 +27,7 @@ export type QuotaProviderType =
   | 'kimi'
   | 'xai'
   | 'codebuddy-cn'
+  | 'codebuddy-intl'
   | 'dimagent';
 
 /** useQuotaStore 的结构契约（storeSelector/storeSetter 依赖）。 */
@@ -36,6 +38,7 @@ export interface QuotaStore {
   kimiQuota: Record<string, KimiQuotaState>;
   xaiQuota: Record<string, XaiQuotaState>;
   codebuddyCnQuota: Record<string, CodeBuddyCnQuotaState>;
+  codebuddyIntlQuota: Record<string, CodeBuddyIntlQuotaState>;
   dimagentQuota: Record<string, DimagentQuotaState>;
   setAntigravityQuota: (updater: QuotaUpdater<Record<string, AntigravityQuotaState>>) => void;
   setClaudeQuota: (updater: QuotaUpdater<Record<string, ClaudeQuotaState>>) => void;
@@ -43,6 +46,7 @@ export interface QuotaStore {
   setKimiQuota: (updater: QuotaUpdater<Record<string, KimiQuotaState>>) => void;
   setXaiQuota: (updater: QuotaUpdater<Record<string, XaiQuotaState>>) => void;
   setCodebuddyCnQuota: (updater: QuotaUpdater<Record<string, CodeBuddyCnQuotaState>>) => void;
+  setCodebuddyIntlQuota: (updater: QuotaUpdater<Record<string, CodeBuddyIntlQuotaState>>) => void;
   setDimagentQuota: (updater: QuotaUpdater<Record<string, DimagentQuotaState>>) => void;
   clearQuotaCache: () => void;
 }

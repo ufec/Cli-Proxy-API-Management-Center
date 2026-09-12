@@ -21,9 +21,11 @@ import { KIMI_CONFIG } from './kimi/data';
 import { KimiQuotaBody } from './kimi/KimiQuotaBody';
 import { XAI_CONFIG } from './xai/data';
 import { CODEBUDDY_CN_CONFIG } from './codebuddycn/data';
+import { CODEBUDDY_INTL_CONFIG } from './codebuddyintl/data';
 import { DIMAGENT_CONFIG } from './dimagent/data';
 import { XaiQuotaBody } from './xai/XaiQuotaBody';
 import { CodebuddyCnQuotaBody } from './codebuddycn/CodebuddyCnQuotaBody';
+import { CodebuddyIntlQuotaBody } from './codebuddyintl/CodebuddyIntlQuotaBody';
 import { DimagentQuotaBody } from './dimagent/DimagentQuotaBody';
 
 /** 所有 provider 额度状态的公共骨架（各 *QuotaState 的结构子集）。 */
@@ -60,6 +62,10 @@ export const QUOTA_ADAPTERS: Record<QuotaProviderType, QuotaAdapter> = {
   'codebuddy-cn': {
     ...CODEBUDDY_CN_CONFIG,
     Body: CodebuddyCnQuotaBody,
+  } as unknown as QuotaAdapter,
+  'codebuddy-intl': {
+    ...CODEBUDDY_INTL_CONFIG,
+    Body: CodebuddyIntlQuotaBody,
   } as unknown as QuotaAdapter,
   dimagent: {
     ...DIMAGENT_CONFIG,

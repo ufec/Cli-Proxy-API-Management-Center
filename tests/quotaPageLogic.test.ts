@@ -59,6 +59,7 @@ describe('buildTabCounts', () => {
       xai: 1,
       kimi: 1,
       'codebuddy-cn': 0,
+      'codebuddy-intl': 0,
       dimagent: 0,
     });
   });

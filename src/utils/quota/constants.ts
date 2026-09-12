@@ -46,6 +46,10 @@ export const TYPE_COLORS: Record<string, TypeColorSet> = {
     light: { bg: '#e4edfd', text: '#2b5fbc' },
     dark: { bg: '#1a3d80', text: '#89b3f7' },
   },
+  'codebuddy-intl': {
+    light: { bg: '#e0f5f1', text: '#067a5e' },
+    dark: { bg: '#0b3d33', text: '#4fd8b8' },
+  },
   empty: {
     light: { bg: '#f5f5f5', text: '#616161' },
     dark: { bg: '#424242', text: '#bdbdbd' },
@@ -150,6 +154,18 @@ export const CODEBUDDY_CN_REQUEST_HEADERS = {
   'Content-Type': 'application/json',
   Origin: 'https://www.workbuddy.cn',
   Referer: 'https://www.workbuddy.cn/app',
+};
+
+// CodeBuddy Intl billing API configuration (billing lives on www.workbuddy.ai, separate origin)
+export const CODEBUDDY_INTL_BILLING_URL =
+  'https://www.workbuddy.ai/billing/meter/get-user-resource-summary';
+
+export const CODEBUDDY_INTL_REQUEST_HEADERS = {
+  Authorization: 'Bearer $TOKEN$',
+  'X-Domain': 'www.workbuddy.ai',
+  'X-User-Id': '$UID$',
+  'User-Agent': 'axios/1.16.1',
+  'Content-Type': 'application/json',
 };
 
 // xAI/Grok API configuration

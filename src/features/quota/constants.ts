@@ -8,6 +8,7 @@ export const QUOTA_TAB_ORDER: readonly QuotaProviderType[] = [
   'xai',
   'kimi',
   'codebuddy-cn',
+  'codebuddy-intl',
   'dimagent',
 ];
 

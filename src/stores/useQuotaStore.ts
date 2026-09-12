@@ -6,6 +6,7 @@ import { create } from 'zustand';
 import type {
   AntigravityQuotaState,
   CodeBuddyCnQuotaState,
+  CodeBuddyIntlQuotaState,
   ClaudeQuotaState,
   CodexQuotaState,
   DimagentQuotaState,
@@ -23,6 +24,7 @@ interface QuotaStoreState {
   kimiQuota: Record<string, KimiQuotaState>;
   xaiQuota: Record<string, XaiQuotaState>;
   codebuddyCnQuota: Record<string, CodeBuddyCnQuotaState>;
+  codebuddyIntlQuota: Record<string, CodeBuddyIntlQuotaState>;
   dimagentQuota: Record<string, DimagentQuotaState>;
   setAntigravityQuota: (updater: QuotaUpdater<Record<string, AntigravityQuotaState>>) => void;
   setClaudeQuota: (updater: QuotaUpdater<Record<string, ClaudeQuotaState>>) => void;
@@ -30,6 +32,7 @@ interface QuotaStoreState {
   setKimiQuota: (updater: QuotaUpdater<Record<string, KimiQuotaState>>) => void;
   setXaiQuota: (updater: QuotaUpdater<Record<string, XaiQuotaState>>) => void;
   setCodebuddyCnQuota: (updater: QuotaUpdater<Record<string, CodeBuddyCnQuotaState>>) => void;
+  setCodebuddyIntlQuota: (updater: QuotaUpdater<Record<string, CodeBuddyIntlQuotaState>>) => void;
   setDimagentQuota: (updater: QuotaUpdater<Record<string, DimagentQuotaState>>) => void;
   clearQuotaCache: () => void;
 }
@@ -49,6 +52,7 @@ export const useQuotaStore = create<QuotaStoreState>((set) => ({
   kimiQuota: {},
   xaiQuota: {},
   codebuddyCnQuota: {},
+  codebuddyIntlQuota: {},
   dimagentQuota: {},
   setAntigravityQuota: (updater) =>
     set((state) => ({
@@ -74,6 +78,10 @@ export const useQuotaStore = create<QuotaStoreState>((set) => ({
     set((state) => ({
       codebuddyCnQuota: resolveUpdater(updater, state.codebuddyCnQuota),
     })),
+  setCodebuddyIntlQuota: (updater) =>
+    set((state) => ({
+      codebuddyIntlQuota: resolveUpdater(updater, state.codebuddyIntlQuota),
+    })),
   setDimagentQuota: (updater) =>
     set((state) => ({
       dimagentQuota: resolveUpdater(updater, state.dimagentQuota),
@@ -87,6 +95,7 @@ export const useQuotaStore = create<QuotaStoreState>((set) => ({
       kimiQuota: {},
       xaiQuota: {},
       codebuddyCnQuota: {},
+      codebuddyIntlQuota: {},
       dimagentQuota: {},
     })),
 }));

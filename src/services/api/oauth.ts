@@ -15,6 +15,7 @@ export type BuiltInOAuthProvider =
   | 'kimi'
   | 'xai'
   | 'codebuddy-cn'
+  | 'codebuddy-intl'
   | 'dimagent';
 
 export interface OAuthStartResponse {

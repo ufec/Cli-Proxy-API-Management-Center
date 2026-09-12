@@ -526,20 +526,30 @@ export const authFilesApi = {
   // 获取认证凭证支持的模型
   async getModelsForAuthFile(
     name: string
-  ): Promise<{ id: string; display_name?: string; type?: string; owned_by?: string }[]> {
+  ): Promise<
+    { id: string; display_name?: string; type?: string; owned_by?: string; credits?: string }[]
+  > {
     const data = await apiClient.get<Record<string, unknown>>(
       `/auth-files/models?name=${encodeURIComponent(name)}`
     );
     const models = data.models ?? data['models'];
     return Array.isArray(models)
-      ? (models as { id: string; display_name?: string; type?: string; owned_by?: string }[])
+      ? (models as {
+          id: string;
+          display_name?: string;
+          type?: string;
+          owned_by?: string;
+          credits?: string;
+        }[])
       : [];
   },
 
   // 获取指定 channel 的模型定义
   async getModelDefinitions(
     channel: string
-  ): Promise<{ id: string; display_name?: string; type?: string; owned_by?: string }[]> {
+  ): Promise<
+    { id: string; display_name?: string; type?: string; owned_by?: string; credits?: string }[]
+  > {
     const normalizedChannel = normalizeOAuthProviderKey(String(channel ?? ''));
     if (!normalizedChannel) return [];
     const data = await apiClient.get<Record<string, unknown>>(
@@ -547,7 +557,13 @@ export const authFilesApi = {
     );
     const models = data.models ?? data['models'];
     return Array.isArray(models)
-      ? (models as { id: string; display_name?: string; type?: string; owned_by?: string }[])
+      ? (models as {
+          id: string;
+          display_name?: string;
+          type?: string;
+          owned_by?: string;
+          credits?: string;
+        }[])
       : [];
   },
 };

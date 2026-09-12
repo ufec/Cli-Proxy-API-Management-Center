@@ -23,6 +23,8 @@ export type AuthFileModelItem = {
   display_name?: string;
   type?: string;
   owned_by?: string;
+  /** Backend-reported model credit cost, e.g. "x0.59 credits" / "x0.00". */
+  credits?: string;
 };
 export type AuthFileIconAsset = string | { light: string; dark: string };
 
@@ -61,6 +63,7 @@ export const AUTH_FILE_MANUAL_REFRESH_PROVIDERS = new Set([
   'antigravity',
   'claude',
   'codebuddy-cn',
+  'codebuddy-intl',
   'codex',
   'kimi',
   'xai',
@@ -75,6 +78,7 @@ export const AUTH_FILE_ICONS: Record<string, AuthFileIconAsset> = {
   aistudio: iconGemini,
   claude: iconClaude,
   'codebuddy-cn': iconCodeBuddy,
+  'codebuddy-intl': iconCodeBuddy,
   codex: iconCodex,
   dimagent: iconDimagent,
   gemini: iconGemini,

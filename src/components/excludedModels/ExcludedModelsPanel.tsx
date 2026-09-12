@@ -11,6 +11,8 @@ import styles from './ExcludedModelsPicker.module.scss';
 export interface ExcludedModelCandidate {
   id: string;
   displayName?: string;
+  /** Backend-reported model credit cost, e.g. "x0.59 credits" / "x0.00". */
+  credits?: string;
 }
 
 interface ExcludedModelsPanelProps {
@@ -264,6 +266,9 @@ function ExcludedModelRow({
         <span className={styles.rowId}>{candidate.id}</span>
         {candidate.displayName && candidate.displayName !== candidate.id ? (
           <span className={styles.rowDisplayName}>{candidate.displayName}</span>
+        ) : null}
+        {candidate.credits ? (
+          <span className={styles.rowDisplayName}>{candidate.credits}</span>
         ) : null}
         {wildcardReason ? <span className={styles.rowReason}>{wildcardReason.text}</span> : null}
       </span>

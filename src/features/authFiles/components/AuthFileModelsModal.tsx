@@ -74,6 +74,7 @@ export function AuthFileModelsModal(props: AuthFileModelsModalProps) {
                 {model.display_name && model.display_name !== model.id && (
                   <span className={styles.modelDisplayName}>{model.display_name}</span>
                 )}
+                {model.credits && <span className={styles.modelDisplayName}>{model.credits}</span>}
                 {model.type && <span className={styles.modelType}>{model.type}</span>}
                 {excludedModel && (
                   <span className={styles.excludedBadge}>

@@ -35,6 +35,10 @@ export function isCodeBuddyCnFile(file: AuthFileItem): boolean {
   return resolveAuthProvider(file) === 'codebuddy-cn';
 }
 
+export function isCodeBuddyIntlFile(file: AuthFileItem): boolean {
+  return resolveAuthProvider(file) === 'codebuddy-intl';
+}
+
 export function isDimagentFile(file: AuthFileItem): boolean {
   return resolveAuthProvider(file) === 'dimagent';
 }

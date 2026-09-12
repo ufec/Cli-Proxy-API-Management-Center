@@ -76,7 +76,12 @@ export function AuthFileExcludedModelsField({
 
   const rules = useMemo(() => parseExcludedRulesText(value), [value]);
   const candidates = useMemo(
-    () => models.map((model) => ({ id: model.id, displayName: model.display_name })),
+    () =>
+      models.map((model) => ({
+        id: model.id,
+        displayName: model.display_name,
+        credits: model.credits,
+      })),
     [models]
   );
   const catalogState: ExcludedModelsCatalogState = loading

@@ -22,7 +22,13 @@ import type { AuthFileItem, OAuthModelAliasEntry } from '@/types';
 import { getErrorMessage } from '@/utils/helpers';
 import styles from '@/features/authFiles/components/OAuthEditor.module.scss';
 
-type AuthFileModelItem = { id: string; display_name?: string; type?: string; owned_by?: string };
+type AuthFileModelItem = {
+  id: string;
+  display_name?: string;
+  type?: string;
+  owned_by?: string;
+  credits?: string;
+};
 
 type LocationState = { fromAuthFiles?: boolean } | null;
 
@@ -91,7 +97,12 @@ export function AuthFilesOAuthExcludedEditPage() {
   );
   const contentDirty = baselineModelsSignature !== effectiveRulesSignature;
   const candidates = useMemo(
-    () => modelsList.map((model) => ({ id: model.id, displayName: model.display_name })),
+    () =>
+      modelsList.map((model) => ({
+        id: model.id,
+        displayName: model.display_name,
+        credits: model.credits,
+      })),
     [modelsList]
   );
   const catalogState: ExcludedModelsCatalogState = modelsLoading

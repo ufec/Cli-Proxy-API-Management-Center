@@ -326,6 +326,22 @@ export interface CodeBuddyCnQuotaState {
   errorStatus?: number;
 }
 
+// CodeBuddy Intl billing API payload types
+export interface CodeBuddyIntlQuotaRow {
+  id: string;
+  label: string;
+  unit: string;
+  used: number;
+  limit: number;
+}
+
+export interface CodeBuddyIntlQuotaState {
+  status: 'idle' | 'loading' | 'success' | 'error';
+  rows: CodeBuddyIntlQuotaRow[];
+  error?: string;
+  errorStatus?: number;
+}
+
 // DimAgent usage payload (the inner `data` object of GET /api/me/usage).
 // The account is billed in "credits" for the subscription term, plus
 // per-feature meters (e.g. web_search calls).
