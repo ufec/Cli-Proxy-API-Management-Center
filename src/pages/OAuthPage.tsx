@@ -25,6 +25,7 @@ import iconGrok from '@/assets/icons/grok.svg';
 import iconGrokDark from '@/assets/icons/grok-dark.svg';
 import iconDimagent from '@/assets/icons/dimagent.png';
 import iconCodeBuddy from '@/assets/icons/codebuddy.svg';
+import iconQwen from '@/assets/icons/qwen.svg';
 
 interface ProviderState {
   url?: string;
@@ -123,6 +124,12 @@ const PROVIDERS: BuiltInOAuthProviderCard[] = [
     id: 'dimagent',
     titleKey: 'auth_login.dimagent_oauth_title',
     icon: iconDimagent,
+  },
+  {
+    kind: 'builtin',
+    id: 'qoder',
+    titleKey: 'auth_login.qoder_oauth_title',
+    icon: iconQwen,
   },
 ];
 

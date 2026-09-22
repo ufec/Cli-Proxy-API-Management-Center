@@ -11,6 +11,7 @@ import iconIflow from '@/assets/icons/iflow.svg';
 import iconKimiDark from '@/assets/icons/kimi-dark.svg';
 import iconKimiLight from '@/assets/icons/kimi-light.svg';
 import iconQwen from '@/assets/icons/qwen.svg';
+import iconQoder from '@/assets/icons/qoder.svg';
 import iconVertex from '@/assets/icons/vertex.svg';
 import type { AuthFileItem, ResolvedTheme, ThemeColors } from '@/types';
 import { normalizeOAuthProviderKey } from '@/utils/providerKeys';
@@ -47,6 +48,7 @@ export const OAUTH_PROVIDER_PRESETS = [
   'claude',
   'codex',
   'kimi',
+  'qoder',
 ];
 
 const OAUTH_PROVIDER_EXCLUDES = new Set(['all', 'unknown', 'empty']);
@@ -68,6 +70,7 @@ export const AUTH_FILE_MANUAL_REFRESH_PROVIDERS = new Set([
   'kimi',
   'xai',
   'dimagent',
+  'qoder',
 ]);
 
 // 标签类型颜色配置：权威版本在 @/utils/quota/constants.ts，此处仅转发
@@ -85,6 +88,7 @@ export const AUTH_FILE_ICONS: Record<string, AuthFileIconAsset> = {
   xai: { light: iconGrok, dark: iconGrokDark },
   iflow: iconIflow,
   kimi: { light: iconKimiDark, dark: iconKimiLight },
+  qoder: iconQoder,
   qwen: iconQwen,
   vertex: iconVertex,
 };

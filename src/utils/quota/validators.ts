@@ -43,6 +43,10 @@ export function isDimagentFile(file: AuthFileItem): boolean {
   return resolveAuthProvider(file) === 'dimagent';
 }
 
+export function isQoderFile(file: AuthFileItem): boolean {
+  return resolveAuthProvider(file) === 'qoder';
+}
+
 export function isDisabledAuthFile(file: AuthFileItem): boolean {
   const raw = (file as { disabled?: unknown }).disabled;
   if (typeof raw === 'boolean') return raw;

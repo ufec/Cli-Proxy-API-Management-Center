@@ -16,7 +16,8 @@ export type BuiltInOAuthProvider =
   | 'xai'
   | 'codebuddy-cn'
   | 'codebuddy-intl'
-  | 'dimagent';
+  | 'dimagent'
+  | 'qoder';
 
 export interface OAuthStartResponse {
   url: string;
