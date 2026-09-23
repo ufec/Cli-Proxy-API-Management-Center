@@ -12,6 +12,7 @@ import { XAI_CONFIG } from './providers/xai/data';
 import { CODEBUDDY_CN_CONFIG } from './providers/codebuddycn/data';
 import { CODEBUDDY_INTL_CONFIG } from './providers/codebuddyintl/data';
 import { DIMAGENT_CONFIG } from './providers/dimagent/data';
+import { QODER_CONFIG } from './providers/qoder/data';
 import type { QuotaProviderType } from './providers/types';
 import { QUOTA_TAB_ORDER, type QuotaSortMode, type QuotaTabId } from './constants';
 
@@ -24,6 +25,7 @@ const QUOTA_FILTER_MAP: Record<QuotaProviderType, (file: AuthFileItem) => boolea
   'codebuddy-cn': CODEBUDDY_CN_CONFIG.filterFn,
   'codebuddy-intl': CODEBUDDY_INTL_CONFIG.filterFn,
   dimagent: DIMAGENT_CONFIG.filterFn,
+  qoder: QODER_CONFIG.filterFn,
 };
 
 export interface QuotaFileEntry {

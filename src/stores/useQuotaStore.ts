@@ -10,6 +10,7 @@ import type {
   ClaudeQuotaState,
   CodexQuotaState,
   DimagentQuotaState,
+  QoderQuotaState,
   KimiQuotaState,
   XaiQuotaState,
 } from '@/types';
@@ -26,6 +27,7 @@ interface QuotaStoreState {
   codebuddyCnQuota: Record<string, CodeBuddyCnQuotaState>;
   codebuddyIntlQuota: Record<string, CodeBuddyIntlQuotaState>;
   dimagentQuota: Record<string, DimagentQuotaState>;
+  qoderQuota: Record<string, QoderQuotaState>;
   setAntigravityQuota: (updater: QuotaUpdater<Record<string, AntigravityQuotaState>>) => void;
   setClaudeQuota: (updater: QuotaUpdater<Record<string, ClaudeQuotaState>>) => void;
   setCodexQuota: (updater: QuotaUpdater<Record<string, CodexQuotaState>>) => void;
@@ -34,6 +36,7 @@ interface QuotaStoreState {
   setCodebuddyCnQuota: (updater: QuotaUpdater<Record<string, CodeBuddyCnQuotaState>>) => void;
   setCodebuddyIntlQuota: (updater: QuotaUpdater<Record<string, CodeBuddyIntlQuotaState>>) => void;
   setDimagentQuota: (updater: QuotaUpdater<Record<string, DimagentQuotaState>>) => void;
+  setQoderQuota: (updater: QuotaUpdater<Record<string, QoderQuotaState>>) => void;
   clearQuotaCache: () => void;
 }
 
@@ -54,6 +57,7 @@ export const useQuotaStore = create<QuotaStoreState>((set) => ({
   codebuddyCnQuota: {},
   codebuddyIntlQuota: {},
   dimagentQuota: {},
+  qoderQuota: {},
   setAntigravityQuota: (updater) =>
     set((state) => ({
       antigravityQuota: resolveUpdater(updater, state.antigravityQuota),
@@ -86,6 +90,10 @@ export const useQuotaStore = create<QuotaStoreState>((set) => ({
     set((state) => ({
       dimagentQuota: resolveUpdater(updater, state.dimagentQuota),
     })),
+  setQoderQuota: (updater) =>
+    set((state) => ({
+      qoderQuota: resolveUpdater(updater, state.qoderQuota),
+    })),
   clearQuotaCache: () =>
     set((state) => ({
       cacheGeneration: state.cacheGeneration + 1,
@@ -97,16 +105,13 @@ export const useQuotaStore = create<QuotaStoreState>((set) => ({
       codebuddyCnQuota: {},
       codebuddyIntlQuota: {},
       dimagentQuota: {},
+      qoderQuota: {},
     })),
 }));
 
-export const captureQuotaCacheGeneration = (): number =>
-  useQuotaStore.getState().cacheGeneration;
+export const captureQuotaCacheGeneration = (): number => useQuotaStore.getState().cacheGeneration;
 
-export const commitIfQuotaCacheCurrent = (
-  generation: number,
-  commit: () => void
-): boolean => {
+export const commitIfQuotaCacheCurrent = (generation: number, commit: () => void): boolean => {
   if (useQuotaStore.getState().cacheGeneration !== generation) return false;
   commit();
   return true;

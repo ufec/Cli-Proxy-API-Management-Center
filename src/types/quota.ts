@@ -397,6 +397,28 @@ export interface DimagentQuotaState {
   errorStatus?: number;
 }
 
+export interface QoderQuotaRow {
+  id: string;
+  label: string;
+  total: number;
+  used: number;
+  remaining: number;
+  unit: string;
+}
+
+export interface QoderQuotaData {
+  displayMode: 'qoder' | 'enterprise';
+  userType: string | null;
+  expiresAtMs: number | null;
+  rows: QoderQuotaRow[];
+}
+
+export interface QoderQuotaState extends QoderQuotaData {
+  status: 'idle' | 'loading' | 'success' | 'error';
+  error?: string;
+  errorStatus?: number;
+}
+
 // xAI/Grok API payload types
 export interface XaiBillingCent {
   val?: number | string;

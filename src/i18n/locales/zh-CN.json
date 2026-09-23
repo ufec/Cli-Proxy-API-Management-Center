@@ -528,6 +528,22 @@
     "reset": "{{date}} 重置",
     "feature_web_search": "网页搜索"
   },
+  "qoder_quota": {
+    "empty_title": "暂无 Qoder 认证",
+    "empty_desc": "使用 Qoder OAuth 登录后即可查看账号额度。",
+    "idle": "点击此处加载 Qoder 额度",
+    "loading": "正在加载 Qoder 额度...",
+    "load_failed": "Qoder 额度获取失败：{{message}}",
+    "missing_auth_index": "认证文件缺少 auth_index",
+    "empty_data": "暂无 Qoder 额度数据",
+    "enterprise": "企业版用量详情请在 Qoder 账号页面查看。",
+    "expires": "套餐到期：{{date}}",
+    "user": "账户额度",
+    "addon": "附加额度",
+    "shared": "共享额度",
+    "dedicated": "专属额度",
+    "remaining": "剩余 {{remaining}} / {{total}} {{unit}}"
+  },
   "xai_quota": {
     "title": "Grok 额度",
     "empty_title": "暂无 xAI/Grok 认证",
@@ -1263,7 +1279,7 @@
     "meta_loaded": "{{count}} 个已加载",
     "meta_attention": "{{count}} 个需关注",
     "empty_title": "暂无可查额度的凭证",
-    "empty_desc": "接入 Antigravity、Claude、Codex、xAI、Kimi、CodeBuddy CN 或 DimAgent 凭证后即可在此查看额度。",
+    "empty_desc": "接入 Antigravity、Claude、Codex、xAI、Kimi、CodeBuddy CN、DimAgent 或 Qoder 凭证后即可在此查看额度。",
     "windows_title": "配额窗口",
     "windows_span_weekly": "两周",
     "windows_span_session": "三天",

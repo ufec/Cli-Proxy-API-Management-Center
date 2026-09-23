@@ -528,6 +528,22 @@
     "reset": "{{date}} 重設",
     "feature_web_search": "網頁搜尋"
   },
+  "qoder_quota": {
+    "empty_title": "暫無 Qoder 認證",
+    "empty_desc": "使用 Qoder OAuth 登入後即可查看帳號額度。",
+    "idle": "點擊此處載入 Qoder 額度",
+    "loading": "正在載入 Qoder 額度...",
+    "load_failed": "Qoder 額度取得失敗：{{message}}",
+    "missing_auth_index": "認證檔案缺少 auth_index",
+    "empty_data": "暫無 Qoder 額度資料",
+    "enterprise": "企業版用量詳情請至 Qoder 帳號頁面查看。",
+    "expires": "方案到期：{{date}}",
+    "user": "帳號額度",
+    "addon": "附加額度",
+    "shared": "共享額度",
+    "dedicated": "專屬額度",
+    "remaining": "剩餘 {{remaining}} / {{total}} {{unit}}"
+  },
   "xai_quota": {
     "title": "Grok 配額",
     "empty_title": "暫無 xAI/Grok 驗證",
@@ -1289,7 +1305,7 @@
     "meta_loaded": "{{count}} 個已載入",
     "meta_attention": "{{count}} 個需關注",
     "empty_title": "暫無可查配額的憑證",
-    "empty_desc": "接入 Antigravity、Claude、Codex、xAI、Kimi、CodeBuddy CN 或 DimAgent 憑證後即可在此查看配額。",
+    "empty_desc": "接入 Antigravity、Claude、Codex、xAI、Kimi、CodeBuddy CN、DimAgent 或 Qoder 憑證後即可在此查看配額。",
     "windows_title": "配額視窗",
     "windows_span_weekly": "兩週",
     "windows_span_session": "三天",

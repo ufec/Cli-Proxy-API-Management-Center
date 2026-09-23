@@ -527,6 +527,22 @@
     "reset": "Сброс: {{date}}",
     "feature_web_search": "Веб-поиск"
   },
+  "qoder_quota": {
+    "empty_title": "Нет учётных данных Qoder",
+    "empty_desc": "Войдите через Qoder OAuth, чтобы видеть лимит аккаунта.",
+    "idle": "Нажмите, чтобы загрузить лимит Qoder",
+    "loading": "Загрузка лимита Qoder...",
+    "load_failed": "Не удалось загрузить лимит Qoder: {{message}}",
+    "missing_auth_index": "В файле авторизации отсутствует auth_index",
+    "empty_data": "Нет данных о лимите Qoder",
+    "enterprise": "Данные об использовании Enterprise доступны в аккаунте Qoder.",
+    "expires": "Подписка действует до {{date}}",
+    "user": "Лимит аккаунта",
+    "addon": "Дополнительные кредиты",
+    "shared": "Общие кредиты",
+    "dedicated": "Выделенные кредиты",
+    "remaining": "Осталось {{remaining}} / {{total}} {{unit}}"
+  },
   "xai_quota": {
     "title": "Квота Grok",
     "empty_title": "Файлы авторизации xAI/Grok отсутствуют",
@@ -1262,7 +1278,7 @@
     "meta_loaded": "{{count}} загружено",
     "meta_attention": "{{count}} требуют внимания",
     "empty_title": "Нет учётных данных с квотами",
-    "empty_desc": "Подключите учётные данные Antigravity, Claude, Codex, xAI, Kimi, CodeBuddy CN или DimAgent, чтобы отслеживать квоту здесь.",
+    "empty_desc": "Подключите учётные данные Antigravity, Claude, Codex, xAI, Kimi, CodeBuddy CN, DimAgent или Qoder, чтобы отслеживать квоту здесь.",
     "windows_title": "Окна квот",
     "windows_span_weekly": "две недели",
     "windows_span_session": "три дня",

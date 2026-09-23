@@ -10,6 +10,7 @@ export const QUOTA_TAB_ORDER: readonly QuotaProviderType[] = [
   'codebuddy-cn',
   'codebuddy-intl',
   'dimagent',
+  'qoder',
 ];
 
 export type QuotaTabId = 'all' | QuotaProviderType;

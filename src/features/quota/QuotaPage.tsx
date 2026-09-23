@@ -108,6 +108,7 @@ export function QuotaPage() {
   const codebuddyCnQuota = useQuotaStore((state) => state.codebuddyCnQuota);
   const codebuddyIntlQuota = useQuotaStore((state) => state.codebuddyIntlQuota);
   const dimagentQuota = useQuotaStore((state) => state.dimagentQuota);
+  const qoderQuota = useQuotaStore((state) => state.qoderQuota);
 
   const quotaByType = useMemo<Record<QuotaProviderType, Record<string, QuotaCardState>>>(
     () =>
@@ -120,6 +121,7 @@ export function QuotaPage() {
         'codebuddy-cn': codebuddyCnQuota,
         'codebuddy-intl': codebuddyIntlQuota,
         dimagent: dimagentQuota,
+        qoder: qoderQuota,
       }) as unknown as Record<QuotaProviderType, Record<string, QuotaCardState>>,
     [
       antigravityQuota,
@@ -130,6 +132,7 @@ export function QuotaPage() {
       codebuddyCnQuota,
       codebuddyIntlQuota,
       dimagentQuota,
+      qoderQuota,
     ]
   );
 

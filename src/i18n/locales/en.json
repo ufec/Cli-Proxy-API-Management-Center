@@ -528,6 +528,22 @@
     "reset": "Resets {{date}}",
     "feature_web_search": "Web Search"
   },
+  "qoder_quota": {
+    "empty_title": "No Qoder credentials",
+    "empty_desc": "Log in with Qoder OAuth to view account credits.",
+    "idle": "Click to load Qoder credits",
+    "loading": "Loading Qoder credits...",
+    "load_failed": "Failed to load Qoder credits: {{message}}",
+    "missing_auth_index": "Auth file is missing auth_index",
+    "empty_data": "No Qoder credit data available",
+    "enterprise": "Enterprise usage details are available in the Qoder account portal.",
+    "expires": "Plan expires {{date}}",
+    "user": "Account credits",
+    "addon": "Add-on credits",
+    "shared": "Shared credits",
+    "dedicated": "Dedicated credits",
+    "remaining": "{{remaining}} / {{total}} {{unit}} remaining"
+  },
   "xai_quota": {
     "title": "Grok Quota",
     "empty_title": "No xAI/Grok Auth Files",
@@ -1263,7 +1279,7 @@
     "meta_loaded": "{{count}} loaded",
     "meta_attention": "{{count}} need attention",
     "empty_title": "No quota-capable credentials",
-    "empty_desc": "Connect an Antigravity, Claude, Codex, xAI, Kimi, CodeBuddy CN, or DimAgent credential to track its quota here.",
+    "empty_desc": "Connect an Antigravity, Claude, Codex, xAI, Kimi, CodeBuddy CN, DimAgent, or Qoder credential to track its quota here.",
     "windows_title": "Quota windows",
     "windows_span_weekly": "two weeks",
     "windows_span_session": "three days",
