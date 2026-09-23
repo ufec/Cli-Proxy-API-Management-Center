@@ -11,7 +11,9 @@ import type {
   AuthFileItem,
   ClaudeQuotaState,
   CodexQuotaState,
+  DevinQuotaState,
   KimiQuotaState,
+  MetaQuotaState,
   XaiQuotaState,
   CodeBuddyCnQuotaState,
   CodeBuddyIntlQuotaState,
@@ -30,14 +32,18 @@ export type QuotaProviderType =
   | 'codebuddy-cn'
   | 'codebuddy-intl'
   | 'dimagent'
-  | 'qoder';
+  | 'qoder'
+  | 'devin'
+  | 'meta';
 
 /** useQuotaStore 的结构契约（storeSelector/storeSetter 依赖）。 */
 export interface QuotaStore {
   antigravityQuota: Record<string, AntigravityQuotaState>;
   claudeQuota: Record<string, ClaudeQuotaState>;
   codexQuota: Record<string, CodexQuotaState>;
+  devinQuota: Record<string, DevinQuotaState>;
   kimiQuota: Record<string, KimiQuotaState>;
+  metaQuota: Record<string, MetaQuotaState>;
   xaiQuota: Record<string, XaiQuotaState>;
   codebuddyCnQuota: Record<string, CodeBuddyCnQuotaState>;
   codebuddyIntlQuota: Record<string, CodeBuddyIntlQuotaState>;
@@ -46,7 +52,9 @@ export interface QuotaStore {
   setAntigravityQuota: (updater: QuotaUpdater<Record<string, AntigravityQuotaState>>) => void;
   setClaudeQuota: (updater: QuotaUpdater<Record<string, ClaudeQuotaState>>) => void;
   setCodexQuota: (updater: QuotaUpdater<Record<string, CodexQuotaState>>) => void;
+  setDevinQuota: (updater: QuotaUpdater<Record<string, DevinQuotaState>>) => void;
   setKimiQuota: (updater: QuotaUpdater<Record<string, KimiQuotaState>>) => void;
+  setMetaQuota: (updater: QuotaUpdater<Record<string, MetaQuotaState>>) => void;
   setXaiQuota: (updater: QuotaUpdater<Record<string, XaiQuotaState>>) => void;
   setCodebuddyCnQuota: (updater: QuotaUpdater<Record<string, CodeBuddyCnQuotaState>>) => void;
   setCodebuddyIntlQuota: (updater: QuotaUpdater<Record<string, CodeBuddyIntlQuotaState>>) => void;

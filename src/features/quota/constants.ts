@@ -11,6 +11,8 @@ export const QUOTA_TAB_ORDER: readonly QuotaProviderType[] = [
   'codebuddy-intl',
   'dimagent',
   'qoder',
+  'devin',
+  'meta',
 ];
 
 export type QuotaTabId = 'all' | QuotaProviderType;
